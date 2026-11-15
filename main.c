@@ -1,2 +1,30 @@
 #include <stdio.h>
-int main(void){int a;long s=0;scanf("%d",&a);if(a<0){printf("NG");return 0;}for(int i=1;;i++){if(i>a)break;if(i%3==0||i%5==0)continue;s+=i;}printf("%ld",s);return 0;}
+
+int main(void)
+{
+    int upper_limit;
+    long total_sum = 0;
+
+    scanf("%d", &upper_limit);
+
+    if (upper_limit < 0) {
+        printf("NG");
+        return 0;
+    }
+
+    for (int current_number = 1; ; current_number++) {
+        if (current_number > upper_limit) {
+            break;
+        }
+
+    
+        if (current_number % 3 == 0 || current_number % 5 == 0) {
+            continue;
+        }
+
+        total_sum += current_number;
+    }
+
+    printf("%ld", total_sum);
+    return 0;
+}
